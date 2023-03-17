@@ -14125,6 +14125,7 @@ const modals = () => {
 
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        close.focus();
       });
     });
     close.addEventListener('click', () => {

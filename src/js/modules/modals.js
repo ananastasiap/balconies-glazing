@@ -1,6 +1,5 @@
 const modals = () => {
   const bindModal = (triggerSelector, modalSelector, closeSelector) => {
-
     const triggers = document.querySelectorAll(triggerSelector);
     const modal = document.querySelector(modalSelector);
     const close = document.querySelector(closeSelector);
@@ -13,6 +12,7 @@ const modals = () => {
 
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        close.focus();
       });
     });
 
