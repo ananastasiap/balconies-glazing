@@ -889,7 +889,8 @@ textarea:focus {
 }
 
 .popup_close:focus {
-  transform: rotate(180deg);
+  font-size: 5rem;
+  -webkit-text-stroke: 1.5px #333333;
 }
 
 .popup_calc {
