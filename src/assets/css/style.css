@@ -889,8 +889,7 @@ textarea:focus {
 }
 
 .popup_close:focus {
-  font-size: 5rem;
-  -webkit-text-stroke: 1.5px #333333;
+  outline: #ffc600 solid 2px;
 }
 
 .popup_calc {
