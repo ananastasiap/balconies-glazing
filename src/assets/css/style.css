@@ -885,6 +885,11 @@ textarea:focus {
   color: #ffffff;
   border: none;
   background: transparent;
+  transition: all 0.5s ease-in-out;
+}
+
+.popup_close:focus {
+  outline: #ffc600 solid 2px;
 }
 
 .popup_calc {
