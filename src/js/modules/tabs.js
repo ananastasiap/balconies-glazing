@@ -34,6 +34,15 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
     }
   });
 
+  tabs.forEach((tab, numOfTab) => {
+    tab.addEventListener('keydown', (event) => {
+      if(event.key === 'Enter') {
+        hideTabContent();
+        showTabContent(numOfTab);
+      }
+    });
+  });
+
 };
 
 export default tabs;
