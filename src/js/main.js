@@ -2,7 +2,6 @@ import './slider';
 import { modals, tabs, forms } from './modules';
 
 window.addEventListener('DOMContentLoaded', () => {
-  'use stricts';
   modals();
   tabs({
     headerSelector: '.glazing_slider',

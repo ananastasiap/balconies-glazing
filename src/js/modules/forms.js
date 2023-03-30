@@ -16,7 +16,7 @@ export const forms = () => {
 
   const postData = async (url, data) => {
     document.querySelector('.status').textContent = message.loading;
-    let result = await fetch(url, {
+    const result = await fetch(url, {
       method: "POST",
       body: data
     });
@@ -34,13 +34,16 @@ export const forms = () => {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
 
-      let statusMessage = document.createElement('div');
+      const statusMessage = document.createElement('div');
       statusMessage.classList.add('status');
-      form.appendChild(statusMessage);
+      form.append(statusMessage);
 
       const formData = new FormData(form);
+      const jsonObject = {};
+      formData.forEach((value, key) => jsonObject[key] = value);
+      const jsonData = JSON.stringify(jsonObject);
 
-      postData('https://simple-server-cumz.onrender.com/api/data', formData)
+      postData('https://simple-server-cumz.onrender.com/api/data', jsonData)
             .then(result => {
               statusMessage.textContent = message.success;
             })
