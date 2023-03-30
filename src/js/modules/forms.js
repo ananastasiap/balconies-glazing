@@ -18,7 +18,10 @@ export const forms = () => {
     document.querySelector('.status').textContent = message.loading;
     const result = await fetch(url, {
       method: "POST",
-      body: data
+      body: data,
+      headers: {
+        'Content-type': 'application/json',
+      },
     });
 
     return await result.text();
