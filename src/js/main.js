@@ -21,5 +21,5 @@ window.addEventListener('DOMContentLoaded', () => {
     contentSelector: '.big_img > img',
     activeClass: 'do_image_more',
     display: 'inline-block'});
-  forms();
+  forms(modalState);
 });

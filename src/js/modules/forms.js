@@ -1,6 +1,6 @@
 import { checkNumInputs } from './index.js';
 
-export const forms = () => {
+export const forms = (state) => {
   const forms = document.querySelectorAll('form');
   const inputs = document.querySelectorAll('input');
   const message = {
@@ -30,6 +30,20 @@ export const forms = () => {
     });
   };
 
+  const sendData = (url, data) => {
+    postData(url, data)
+            .then(result => {
+              statusMessage.textContent = message.success;
+            })
+            .catch(() => statusMessage.textContent = message.failure)
+            .finally(() => {
+              clearInputs();
+              setTimeout(() => {
+                statusMessage.remove();
+              }, 5000);
+            });
+  }
+
   forms.forEach(form => {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -43,17 +57,16 @@ export const forms = () => {
       formData.forEach((value, key) => jsonObject[key] = value);
       const jsonData = JSON.stringify(jsonObject);
 
-      postData('https://simple-server-cumz.onrender.com/api/data', jsonData)
-            .then(result => {
-              statusMessage.textContent = message.success;
-            })
-            .catch(() => statusMessage.textContent = message.failure)
-            .finally(() => {
-              clearInputs();
-              setTimeout(() => {
-                statusMessage.remove();
-              }, 5000);
-            });
+      if (form.getAttribute('data-calc') === 'end') {
+        const jsonObject = JSON.parse(jsonData);
+        for (let key in state) {
+          jsonObject[key] = state[key];
+        }
+        const jsonDataWithState = JSON.stringify(jsonObject);
+        sendData('https://simple-server-cumz.onrender.com/api/data', jsonDataWithState);
+      } else {
+        sendData('https://simple-server-cumz.onrender.com/api/data', jsonData);
+      }
     });
   });
 
