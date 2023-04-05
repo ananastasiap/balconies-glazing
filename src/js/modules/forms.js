@@ -1,18 +1,15 @@
+import { checkNumInputs } from './index.js';
+
 export const forms = () => {
   const forms = document.querySelectorAll('form');
   const inputs = document.querySelectorAll('input');
-  const phoneImputs = document.querySelectorAll('input[name="user_phone"]');
   const message = {
     loading: 'Загрузка...',
     success: 'Спасибо! Скоро мы с вами свяжемся',
     failure: 'Что-то пошло не так...',
   };
 
-  phoneImputs.forEach(phoneImput => {
-    phoneImput.addEventListener('input', () => {
-      phoneImput.value = phoneImput.value.replace(/\D/, '');
-    });
-  });
+  checkNumInputs('input[name="user_phone"]');
 
   const postData = async (url, data) => {
     document.querySelector('.status').textContent = message.loading;

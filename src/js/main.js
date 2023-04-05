@@ -1,7 +1,9 @@
 import './slider';
-import { modals, tabs, forms } from './modules';
+import { modals, tabs, forms, changeModalState } from './modules';
 
 window.addEventListener('DOMContentLoaded', () => {
+  let modalState = {};
+  changeModalState(modalState);
   modals();
   tabs({
     headerSelector: '.glazing_slider',
