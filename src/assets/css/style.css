@@ -1032,6 +1032,7 @@ textarea:focus {
 } */
 
 .sr-only {
+  position: absolute;
   border: 0;
   clip: rect(0 0 0 0);
   -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
@@ -1040,7 +1041,6 @@ textarea:focus {
   margin: -1px;
   overflow: hidden;
   padding: 0;
-  position: absolute;
   width: 1px;
   white-space: nowrap;
 }
@@ -1053,11 +1053,12 @@ textarea:focus {
   border-radius: 3px;
 }
 
-.popup_calc_profile_content .radio-custom:focus {
-  outline: none;
+.popup_calc_profile_content .radio:focus + .radio-custom {
+  outline: 2px solid #ffc600;
+
 }
-.popup_calc_profile_content .radio-custom:focus-visible {
-  border: 2px solid #ffc600;
+
+.popup_calc_profile_content .radio:focus:not(:focus-visible) {
   outline: none;
 }
 
