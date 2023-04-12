@@ -28,7 +28,6 @@ export const changeModalState = (state) => {
             state[property] = element.value;
             break;
         }
-        console.log(state);
       });
     });
   };
