@@ -1055,7 +1055,6 @@ textarea:focus {
 
 .popup_calc_profile_content .radio:focus + .radio-custom {
   outline: 2px solid #ffc600;
-
 }
 
 .popup_calc_profile_content .radio:focus:not(:focus-visible) {
