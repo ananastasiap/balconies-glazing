@@ -1026,11 +1026,26 @@ textarea:focus {
   outline: none;
 }
 
-.popup_calc_profile_content .checkbox {
+/* ! */
+/* .popup_calc_profile_content .radio {
   display: none;
+} */
+
+.sr-only {
+  position: absolute;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+  white-space: nowrap;
 }
 
-.popup_calc_profile_content .checkbox-custom {
+.popup_calc_profile_content .radio-custom {
   position: relative;
   width: 22px;
   height: 22px;
@@ -1038,13 +1053,21 @@ textarea:focus {
   border-radius: 3px;
 }
 
-.popup_calc_profile_content .checkbox-custom,
+.popup_calc_profile_content .radio:focus + .radio-custom {
+  outline: 2px solid #ffc600;
+}
+
+.popup_calc_profile_content .radio:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.popup_calc_profile_content .radio-custom,
 .popup_calc_profile_content .label {
   display: inline-block;
   vertical-align: middle;
 }
 
-.popup_calc_profile_content .checkbox:checked+.checkbox-custom::before {
+.popup_calc_profile_content .radio:checked+.radio-custom::before {
   content: "";
   display: block;
   position: absolute;
@@ -1054,7 +1077,7 @@ textarea:focus {
   left: 0;
 }
 
-.checkbox-custom[id="cold"]::before {
+.radio-custom[id="cold"]::before {
   background: url(../img/modal_calc/check.png) center center no-repeat;
 }
 
@@ -1062,7 +1085,7 @@ textarea:focus {
   background: url();
 }
 
-.checkbox-custom[id="warm"]::before {
+.radio-custom[id="warm"]::before {
   background: url(../img/modal_calc/check_warm.png) center center no-repeat;
 }
 
