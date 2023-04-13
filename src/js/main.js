@@ -1,8 +1,10 @@
 import './slider';
-import { modals, tabs, forms, changeModalState } from './modules';
+import { modals, tabs, forms, changeModalState, timer } from './modules';
 
 window.addEventListener('DOMContentLoaded', () => {
   let modalState = {};
+  let deadline = '2023-10-01';
+
   changeModalState(modalState);
   modals();
   tabs({
@@ -22,4 +24,5 @@ window.addEventListener('DOMContentLoaded', () => {
     activeClass: 'do_image_more',
     display: 'inline-block'});
   forms(modalState);
+  timer('.container1', deadline);
 });
