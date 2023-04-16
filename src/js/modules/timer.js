@@ -2,10 +2,10 @@ export const timer = (id, deadline) => {
 
   const getTimeRemaining = (deadline) => {
     const remainingTime = new Date(deadline - new Date());
-    const [days] = remainingTime.toLocaleDateString('ru-RU', { dateStyle: 'short' })
-                                                                      .split('.');
-    const [hours, minutes, seconds] = remainingTime.toLocaleTimeString('ru-RU', { timeStyle: 'medium' })
-                                                                      .split(':');
+    const totalMonths = (remainingTime.getUTCFullYear() - 1970) * 12 + remainingTime.getUTCMonth();
+    const days = remainingTime.getUTCDate() + (totalMonths * 30); // умножаем количество месяцев на среднее количество дней
+    // const [days] = remainingTime.toLocaleDateString('ru-RU', { dateStyle: 'short' }).split('.');
+    const [hours, minutes, seconds] = remainingTime.toLocaleTimeString('ru-RU', { timeStyle: 'medium' }).split(':');
 
     return {remainingTime, days, hours, minutes, seconds};
   };
