@@ -3,7 +3,7 @@ import { modals, tabs, forms, changeModalState, timer } from './modules';
 
 window.addEventListener('DOMContentLoaded', () => {
   let modalState = {};
-  const deadline = '2023-10-04';
+  const deadline = '2024-01-01';
 
   changeModalState(modalState);
   modals();
