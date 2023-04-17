@@ -589,6 +589,15 @@ textarea:focus {
   margin-bottom: 3rem;
 }
 
+/* ! will it work..? */
+.preview:focus {
+  outline: none;
+}
+
+.preview:focus-visible {
+  outline: 2px solid #ffc600;
+}
+
 .works a[data-fancybox="gallery"] .lupa {
   /* position: ; */
   top: 0;
@@ -718,13 +727,6 @@ textarea:focus {
   text-align: center;
   color: black;
 }
-
-
-
-
-
-
-
 
 /*Contacts*/
 .contacts {
