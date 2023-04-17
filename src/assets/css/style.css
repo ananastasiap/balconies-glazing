@@ -597,6 +597,13 @@ textarea:focus {
 .preview:focus-visible {
   outline: 2px solid #ffc600;
 }
+/* ! ---------------- */
+
+.big-preview {
+  width: 25%;
+  height: auto;
+  max-width: 500px;
+}
 
 .works a[data-fancybox="gallery"] .lupa {
   /* position: ; */

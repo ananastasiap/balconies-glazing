@@ -11,6 +11,9 @@ export const images = () => {
   imgPopup.style.alignItems = 'center';
   imgPopup.style.display = 'none';
 
+  bigImage.style.width = '65vh';
+  bigImage.style.height = 'auto';
+
   imgPopup.append(bigImage);
 
   const closeBigImg = () => {
