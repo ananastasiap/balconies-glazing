@@ -599,12 +599,6 @@ textarea:focus {
 }
 /* ! ---------------- */
 
-.big-preview {
-  width: 25%;
-  height: auto;
-  max-width: 500px;
-}
-
 .works a[data-fancybox="gallery"] .lupa {
   /* position: ; */
   top: 0;
