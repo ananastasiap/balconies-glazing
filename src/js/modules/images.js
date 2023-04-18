@@ -21,7 +21,7 @@ export const images = () => {
     rootElement.classList.remove('hide-scroll');
   }
 
-  workSection.addEventListener('click', (event) => {
+  const openBigImg = (event) => {
     event.preventDefault();
     const target = event.target;
 
@@ -31,23 +31,25 @@ export const images = () => {
       bigImage.setAttribute('src', path);
       rootElement.classList.add('hide-scroll');
     }
+  }
+
+  workSection.addEventListener('click', (event) => {
+    const target = event.target;
+    openBigImg(event);
 
     if (target && target.matches('div.popup')) {
       closeBigImg();
     }
-
-  })
+  });
 
   workSection.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      closeBigImg();
+    const target = event.target;
+    if (event.key === 'Enter' && target && target.classList.contains('preview')) {
+      openBigImg(event);
     }
 
-    if (event.key === 'Enter' && event.target && event.target.classList.contains('preview')) {
-      imgPopup.style.display = 'flex';
-      const path = event.target.parentNode.getAttribute('href');
-      bigImage.setAttribute('src', path);
-      rootElement.classList.add('hide-scroll');
+    if (event.key === 'Escape') {
+      closeBigImg();
     }
   });
 }
