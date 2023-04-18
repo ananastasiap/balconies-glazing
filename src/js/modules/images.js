@@ -42,5 +42,12 @@ export const images = () => {
     if (event.key === 'Escape') {
       closeBigImg();
     }
+
+    if (event.key === 'Enter' && event.target && event.target.classList.contains('preview')) {
+      imgPopup.style.display = 'flex';
+      const path = event.target.parentNode.getAttribute('href');
+      bigImage.setAttribute('src', path);
+      rootElement.classList.add('hide-scroll');
+    }
   });
 }
