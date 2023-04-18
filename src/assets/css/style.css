@@ -589,15 +589,13 @@ textarea:focus {
   margin-bottom: 3rem;
 }
 
-/* ! will it work..? */
-.preview:focus {
+.focus-highlight:focus {
   outline: none;
 }
 
-.preview:focus-visible {
-  outline: 2px solid #ffc600;
+.focus-highlight:focus-visible {
+  outline: #ffc600 solid 2px;
 }
-/* ! ---------------- */
 
 .works a[data-fancybox="gallery"] .lupa {
   /* position: ; */
