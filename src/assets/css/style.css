@@ -834,7 +834,8 @@ textarea:focus {
 /*Modals*/
 .popup,
 .popup_engineer,
-.popup_calc_end {
+.popup_calc_end,
+.popup-images {
   display: none;
   position: fixed;
   top: 0;

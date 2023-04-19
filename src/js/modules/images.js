@@ -4,7 +4,7 @@ export const images = () => {
   const imgPopup = document.createElement('div');
   const bigImage = document.createElement('img');
 
-  imgPopup.classList.add('popup');
+  imgPopup.classList.add('popup-images');
   workSection.append(imgPopup);
 
   imgPopup.style.justifyContent = 'center';
@@ -37,7 +37,7 @@ export const images = () => {
     const target = event.target;
     openBigImg(event);
 
-    if (target && target.matches('div.popup')) {
+    if (target && target.matches('div.popup-images')) {
       closeBigImg();
     }
   });
