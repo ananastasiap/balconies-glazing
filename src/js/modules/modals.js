@@ -79,5 +79,5 @@ export const modals = () => {
     modalSelector: '.popup_calc_end',
     closeSelector: '.popup_calc_end_close',
     closeClickOverlay: 'false'});
-  showModalByTime('.popup', 1000);
+  showModalByTime('.popup', 60000);
 };

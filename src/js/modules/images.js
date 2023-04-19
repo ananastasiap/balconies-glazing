@@ -3,6 +3,7 @@ export const images = () => {
   const workSection = document.querySelector('.works');
   const imgPopup = document.createElement('div');
   const bigImage = document.createElement('img');
+  const previews = document.querySelectorAll('.preview');
 
   imgPopup.classList.add('popup-images');
   workSection.append(imgPopup);
@@ -19,37 +20,39 @@ export const images = () => {
   const closeBigImg = () => {
     imgPopup.style.display = 'none';
     rootElement.classList.remove('hide-scroll');
-  }
+  };
 
-  const openBigImg = (event) => {
-    event.preventDefault();
-    const target = event.target;
+  const openBigImg = (path) => {
+    imgPopup.style.display = 'flex';
+    bigImage.setAttribute('src', path);
+    rootElement.classList.add('hide-scroll');
+  };
 
-    if (target && target.classList.contains('preview')) {
-      imgPopup.style.display = 'flex';
-      const path = target.parentNode.getAttribute('href');
-      bigImage.setAttribute('src', path);
-      rootElement.classList.add('hide-scroll');
-    }
-  }
+  previews.forEach(preview => {
+    preview.addEventListener('click', (event) => {
+      event.preventDefault();
+      const path = event.target.parentNode.getAttribute('href');
+      openBigImg(path);
+    });
 
-  workSection.addEventListener('click', (event) => {
-    const target = event.target;
-    openBigImg(event);
+    preview.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        const path = event.target.parentNode.getAttribute('href');
+        openBigImg(path);
+      }
+    });
+  });
 
-    if (target && target.matches('div.popup-images')) {
+  imgPopup.addEventListener('click', (event) => {
+    if (event.target === imgPopup) {
       closeBigImg();
     }
   });
 
-  workSection.addEventListener('keydown', (event) => {
-    const target = event.target;
-    if (event.key === 'Enter' && target && target.classList.contains('preview')) {
-      openBigImg(event);
-    }
-
+  document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       closeBigImg();
     }
   });
-}
+};
