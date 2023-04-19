@@ -589,6 +589,14 @@ textarea:focus {
   margin-bottom: 3rem;
 }
 
+.focus-highlight:focus {
+  outline: none;
+}
+
+.focus-highlight:focus-visible {
+  outline: #ffc600 solid 2px;
+}
+
 .works a[data-fancybox="gallery"] .lupa {
   /* position: ; */
   top: 0;
@@ -604,6 +612,10 @@ textarea:focus {
 
 .works a[data-fancybox="gallery"]:hover .lupa {
   opacity: 1;
+}
+
+.hide-scroll {
+  overflow: hidden;
 }
 
 /*Guarantees*/
@@ -719,13 +731,6 @@ textarea:focus {
   color: black;
 }
 
-
-
-
-
-
-
-
 /*Contacts*/
 .contacts {
   padding: 6rem 0;
@@ -829,7 +834,8 @@ textarea:focus {
 /*Modals*/
 .popup,
 .popup_engineer,
-.popup_calc_end {
+.popup_calc_end,
+.popup-images {
   display: none;
   position: fixed;
   top: 0;
